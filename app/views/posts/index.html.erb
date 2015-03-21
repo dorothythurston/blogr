@@ -2,7 +2,7 @@
 <%= link_to "Add post", new_post_path %>
 
 <ul class= "posts">
-  <%= @posts.each do |post| %>
+  <% @posts.each do |post| %>
     <li>
       <%= post.title %>
       <%= post.tagline %>
@@ -10,5 +10,5 @@
     </li>
   <% end %>
 </ul>
-      
-  
+
+
