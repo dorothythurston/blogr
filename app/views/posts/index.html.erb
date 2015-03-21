@@ -1,1 +1,14 @@
 <h1>Welcome</h1>
+<%= link_to "Add post", new_post_path %>
+
+<ul class= "posts">
+  <%= @posts.each do |post| %>
+    <li>
+      <%= post.title %>
+      <%= post.tagline %>
+      <%= post.content %>
+    </li>
+  <% end %>
+</ul>
+      
+  
