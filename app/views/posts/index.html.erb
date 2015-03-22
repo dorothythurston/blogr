@@ -6,10 +6,11 @@
 <ul class= "posts">
   <% @posts.each do |post| %>
     <li>
-      <%= post.title %>
+      <%= link_to post.title, post %>
       <%= post.tagline %>
       <%= post.content %>
       <%= post.user.email %>
+      <%= time_ago_in_words(post.created_at) %>
       <% if current_user && current_user == post.user %>
         <%= link_to "Edit post", edit_post_path(post) %>
         <%= link_to "Delete post", post, method: :delete %>
