@@ -5,16 +5,17 @@ feature "User deletes post" do
     user = create(:user)
     post = create(
       :post,
-      title: "Original title",
-      tagline: "Original tagline",
-      content: "Original content",
+      title: "Title",
+      tagline: "Tagline",
+      content: "Content",
       user: user
     )
     visit root_path(as: user)
+    click_on "Title"
     click_on "Delete post"
 
-    expect(page).not_to have_css ".posts li", text: "Original title"
-    expect(page).not_to have_css ".posts li", text: "Original tagline"
-    expect(page).not_to have_css ".posts li", text: "Original content"
+    expect(page).not_to have_css ".posts li", text: "Title"
+    expect(page).not_to have_css ".posts li", text: "Tagline"
+    expect(page).not_to have_css ".posts li", text: "Content"
   end
 end

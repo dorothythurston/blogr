@@ -5,13 +5,14 @@ feature "User updates post" do
     user = create(:user)
     post = create(
       :post,
-      title: "Original title",
-      tagline: "Original tagline",
-      content: "Original content",
+      title: "Title",
+      tagline: "Tagline",
+      content: "Content",
       user: user
     )
 
     visit root_path(as: user)
+    click_on "Title"
     click_on "Edit post"
     fill_in "Title", with: "New Title"
     fill_in "Tagline", with: "New Tagline"
