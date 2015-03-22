@@ -1,5 +1,7 @@
 <h1>Welcome</h1>
-<%= link_to "Add post", new_post_path %>
+<% if current_user %>
+  <%= link_to "Add post", new_post_path %>
+<% end %>
 
 <ul class= "posts">
   <% @posts.each do |post| %>
