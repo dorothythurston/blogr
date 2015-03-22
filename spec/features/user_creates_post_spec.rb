@@ -2,7 +2,8 @@ require "rails_helper"
 
 feature "User creates post" do
   scenario "successfully" do
-    visit root_path
+    user = create(:user)
+    visit root_path(as: user)
 
     click_on "Add post"
     fill_in "Title", with: "Title"

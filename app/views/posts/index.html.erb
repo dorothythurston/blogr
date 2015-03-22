@@ -7,6 +7,8 @@
       <%= post.title %>
       <%= post.tagline %>
       <%= post.content %>
+      <%= post.user.email %>
+      <%= link_to "Edit post", edit_post_path(post) %>
     </li>
   <% end %>
 </ul>
