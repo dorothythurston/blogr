@@ -8,7 +8,10 @@
       <%= post.tagline %>
       <%= post.content %>
       <%= post.user.email %>
-      <%= link_to "Edit post", edit_post_path(post) %>
+      <% if current_user && current_user == post.user %>
+        <%= link_to "Edit post", edit_post_path(post) %>
+        <%= link_to "Delete post", post, method: :delete %>
+      <% end %>
     </li>
   <% end %>
 </ul>
