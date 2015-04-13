@@ -1,4 +1,4 @@
-# Blogr
+= Blogr
 Simple blogging app made to practice TDD. 
 
 Things I worked on while making this app:
